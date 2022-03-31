@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import CustomBtn from "./CustomBtn";
-import CustomForm from "./CustomForm";
-import CustomInput from "./CustomForm";
+// import CustomForm from "./CustomForm";
+import CustomInput from "./CustomInput";
 
 import "./ExpenseForm.css";
 
@@ -70,7 +70,7 @@ const ExpenseForm = (props) => {
         <div className="new-expense__controls">
           <div className="new-expense__control">
             <label>Title</label>
-            <input
+            <CustomInput
               value={enteredTitle}
               type="text"
               onChange={titleChangeHandler}
@@ -78,7 +78,7 @@ const ExpenseForm = (props) => {
           </div>
           <div className="new-expense__control">
             <label>Amount</label>
-            <input
+            <CustomInput
               value={enteredAmount}
               type="number"
               min="0.01"
@@ -88,7 +88,7 @@ const ExpenseForm = (props) => {
           </div>
           <div className="new-expense__control">
             <label>Date</label>
-            <input
+            <CustomInput
               value={enteredDate}
               type="date"
               min="2019-01-01"
@@ -97,12 +97,9 @@ const ExpenseForm = (props) => {
             />
           </div>
         </div>
-        {/* <CustomForm/> */}
         <div className="new-expense__actions">
-          <button type="button" onClick={props.onCancel}>
-            Cancel
-          </button>
-          <button type="submit"> Add Expense</button>
+          <CustomBtn type="button" buttonText="Cancel" hide={props.onCancel} />
+          <CustomBtn type="submit" buttonText="submit" />
         </div>
       </form>
     </>

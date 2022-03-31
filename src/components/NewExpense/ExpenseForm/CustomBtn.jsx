@@ -4,11 +4,9 @@ import React from "react";
 
 const CustomBtn = (props) => {
   return (
-    <div className="new-expense__actions">
       <button type={props.type} onClick={props.hide || null}>
         {props.buttonText}
       </button>
-    </div>
   );
 };
 
